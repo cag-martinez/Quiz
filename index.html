@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Quiz</title>
+</head>
+<body>
+    <!-- Nav bar holding the score board href-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="file:///Users/christiangomezmartinez/BootCamp/Quiz/score.html">Score Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText"></div> 
+          <!-- start button -->
+          <span class="navbar-text">
+            <button type="button" id="start" class="btn btn-light"><h3 class="time">start</h3>
+            <div id="main"></div>
+            </button>    
+        </span> 
+      </nav>
+      <br>
+    <!-- this is the question prompt card -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+    <div class="card" id="question">
+        <div class="card-body" style="text-align:center;">
+          <strong>This is where the question wil populate</strong> 
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
+</div>
+<br>
+    <!-- this is the multiple choice options card, with ordered list and buttons -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+      <div class="card" style="text-align:center;" id="answer">
+        <ul class="list-group list-group-flush" style="text-align:center;">
+          <li class="list-group-item">
+            <button type="button" style="background-color: rgb(106, 154, 189);" class="btn btn-primary btn-lg btn-block">Block level button</button></li>
+          <li class="list-group-item">
+            <button type="button" style="background-color: rgb(106, 154, 189);" class="btn btn-primary btn-lg btn-block">Block level button</button></li>
+          <li class="list-group-item">
+            <button type="button" style="background-color: rgb(106, 154, 189);" class="btn btn-primary btn-lg btn-block">Block level button</button></li>
+          <li class="list-group-item">
+            <button type="button" style="background-color: rgb(106, 154, 189);" class="btn btn-primary btn-lg btn-block">Block level button</button></li>
+        </ul>
+      </div>
+      </div>      
+      <div class="col-md-3"></div>
+        </div>
+    </div>    
+    <script src="./index.js"></script>
+</body>
+</html>
