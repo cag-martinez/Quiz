@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>score board</title>
 </head>
@@ -15,20 +15,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText"></div> 
-          <!-- start button -->
-          <span class="navbar-text">
-            <button type="button" class="btn btn-light"><h3 class="time">start</h3>
-            <div id="main"></div>
-            </button>    
-        </span> 
-      </nav>
-      <br>
-    <!-- score board-->
-    <select class="custom-select" size="3">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+    </nav>
+<br>
+<br>
+
+<!-- score board-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="score">
+                <form id="score-form" method="POST">
+                  <label for="user-text">Add initials and score:</label>
+                  <input type="user" placeholder="*********" name="score-text" id="score-text" />
+                </form>
+                <p>Player Count: <span id="player-count">0</span></p>
+                <ul id="score-list"></ul>
+                <li></li>
+                <lli></lli>
+              </div>
+        </div>
+    </div>
+</div>
+<script src="./scores.js"></script>
 </body>
 </html>

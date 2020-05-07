@@ -64,7 +64,7 @@ startBtn.onclick =function () {
     document.getElementById("answer").classList.remove("d-none")
     questionDiv.classList.remove("d-none")
     setTime()
-    renderQuestion()
+    renderQuestion(0)
   } 
   
   function answerCheck(event) {
@@ -100,4 +100,3 @@ function renderQuestion(index) {
         buttonsArray[i].onclick = answerCheck
       }    
   }
-renderQuestion(0);
