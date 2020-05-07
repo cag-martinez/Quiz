@@ -2,16 +2,18 @@
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var startBtn = document.querySelector("#start");
-var secondsLeft = 10;
+var secondsLeft = 60;
 
 function setTime() {
   var setTimeout = setInterval(function () {
-    secondsLeft--;
+    
     timeEl.textContent = secondsLeft + " seconds left.";
 
-    if (secondsLeft === 0) {
+    if (secondsLeft <= 0) {
+        secondsLeft = 0
       clearTimeout(setTimeout);
     }
+    else(secondsLeft--)
   }, 1000);
 }
 
@@ -30,7 +32,7 @@ var choicesDiv = document.getElementById("choices");
 //questions
 var questions = [
   {
-    question: "In which city is friends set?",
+    q: "In which city is friends set?",
     choices: ["LA", "NY", "Miami", "Seattle"],
     answer: "NY"
   },
@@ -56,22 +58,46 @@ var questions = [
 
 
 var index = 0
+var point = 0
 
-function renderQuestion() {
-    var currentQuestion = questions[0];
+startBtn.onclick =function () {
+    document.getElementById("answer").classList.remove("d-none")
+    questionDiv.classList.remove("d-none")
+    setTime()
+    renderQuestion()
+  } 
+  
+  function answerCheck(event) {
+    console.log(event.target.value)
+    if (event.target.value === '1') {
+        point = point +  1
+        index++ 
+    }
+    else if(secondsLeft <= 10) {
+        secondsLeft = 0
+    }
+    else(secondsLeft = secondsLeft - 10)
+    if(index === questions.length)
+    alert("game over")
+    else(renderQuestion(index))
+  }
 
-    questionDiv.textContent = currentQuestion.question.q;
+function renderQuestion(index) {
+    var currentQuestion = questions[index];
+    console.log(currentQuestion.question)
 
-    for (var i = 0; i < currentQuestion.choices.length; i++) {
-        var choice = currentQuestion.choices[i];
+    questionDiv.textContent = currentQuestion.q;
+    console.log("here")
 
-        var btn = document.createElement("button");
+    var buttonsArray =[buttonA, buttonB, buttonC, buttonD]
 
-        btn.textContent = "LA";
-        choicesDiv.appendChild(buttonA);
+    for (var i = 0; i < buttonsArray.length; i++) {
+        buttonsArray[i].textContent = currentQuestion.choices[i]
+        buttonsArray[i].value = 0
+        if (currentQuestion.choices[i] === currentQuestion.answer)
+            buttonsArray[i].value = 1
 
-        renderQuestion();
-    }    
-}
-
-
+        buttonsArray[i].onclick = answerCheck
+      }    
+  }
+renderQuestion(0);
